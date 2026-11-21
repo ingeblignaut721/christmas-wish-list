@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Summer Christmas Wishlist ☀️</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Fredoka:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e8f7ff; --ink:#1f4e6e; --muted:#4f7f9c; --card:#ffffff; --line:#bfe3f7;
+  --sun:#ffd23f; --sun-soft:#fff3b0; --ocean:#4fb8e8; --deep:#1f6fa8; --sand:#fff4d6; --foam:#d6f1ff;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;background:
+  linear-gradient(180deg, var(--ocean) 0, var(--foam) 260px, var(--bg) 520px),
+  var(--bg);color:var(--ink);font-family:"Fredoka",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.45;overflow-x:hidden}
+/* sun in the top-right corner */
+.sun{position:fixed;top:-70px;right:-70px;width:200px;height:200px;border-radius:50%;z-index:0;pointer-events:none;
+  background:var(--sun);box-shadow:0 0 0 22px var(--sun-soft),0 0 0 44px var(--sun-soft);animation:glow 4s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 0 28px var(--sun-soft),0 0 0 56px rgba(255,210,63,.18)}}
+#bubbles{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.b{position:absolute;bottom:-40px;border-radius:50%;background:#ffffff;border:2px solid var(--ocean);opacity:.6;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-110vh)}}
+main{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:28px 18px 60px}
+header{text-align:center;margin-bottom:24px}
+.icon{font-size:60px;display:inline-block;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+.icon.wiggle{animation:wiggle .6s}
+@keyframes wiggle{20%{transform:rotate(-12deg)}40%{transform:rotate(10deg)}60%{transform:rotate(-8deg)}80%{transform:rotate(5deg)}}
+h1{font-family:"Pacifico",cursive;font-weight:400;font-size:2.2rem;line-height:1.15;margin:6px 0 8px;color:var(--deep)}
+.sub{font-family:"Caveat",cursive;font-size:1.6rem;color:#d99a00;margin:0}
+.hint-line{color:var(--muted);font-size:.92rem;margin:8px 0 0}
+.gift{position:relative;margin-bottom:18px;border-radius:26px;background:var(--card);border:3px solid var(--line);overflow:hidden;min-height:150px;box-shadow:0 6px 0 var(--ocean)}
+.wrap{all:unset;box-sizing:border-box;position:absolute;inset:0;z-index:2;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 50%, rgba(255,255,255,.9) 0 4px, transparent 5px) 0 0/28px 28px, repeating-linear-gradient(45deg,#d4f0ff 0 16px,#b3e5fb 16px 32px);transition:transform .5s cubic-bezier(.5,-0.3,.4,1.3),opacity .4s}
+.wrap::before,.wrap::after{content:"";position:absolute;background:var(--sun)}
+.wrap::before{left:50%;top:0;bottom:0;width:24px;transform:translateX(-50%)}
+.wrap::after{top:50%;left:0;right:0;height:24px;transform:translateY(-50%)}
+.wrap span{position:relative;z-index:1;background:var(--sun);color:#5a4300;padding:6px 16px;border-radius:999px;font-weight:700;box-shadow:0 3px 0 #e0b000}
+.wrap:focus-visible{outline:4px solid var(--sun);outline-offset:-6px}
+.gift.open .wrap{transform:translateY(-110%) rotate(-6deg);opacity:0;pointer-events:none}
+.inside{padding:20px 18px 18px;visibility:hidden}
+.gift.open .inside{visibility:visible}
+.gift.open .big{animation:pop .5s .15s both}
+@keyframes pop{from{transform:scale(.2) rotate(-20deg);opacity:0}to{transform:none;opacity:1}}
+.top{display:flex;gap:14px;align-items:center}
+.big{font-size:44px;line-height:1}
+.inside h2{margin:0;font-size:1.3rem;color:var(--deep)}
+.inside p{margin:6px 0 0;color:var(--muted)}
+.hint{font-family:"Caveat",cursive;font-size:1.4rem;color:#c48a00;margin:10px 0 0;display:none}
+.hint.show{display:block}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.btn{font:inherit;font-weight:600;border:0;border-radius:999px;padding:10px 16px;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .15s}
+.btn:active{transform:scale(.95)}
+.btn:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.ghost{background:var(--sun-soft);color:var(--ink)}
+.buy{background:var(--ocean);color:#fff;display:inline-block}
+footer{text-align:center;margin-top:30px;color:var(--muted);font-size:.92rem}
+.bit{position:fixed;z-index:50;pointer-events:none;font-size:22px;animation:burst 1s ease-out forwards}
+@keyframes burst{to{transform:translate(var(--x),var(--y)) rotate(360deg);opacity:0}}
+@media (prefers-reduced-motion: reduce){.b,.bit,.icon.wiggle,.sun{animation:none}.wrap{transition:none}}
+</style>
+</head>
+<body>
+<div class="sun" aria-hidden="true"></div>
+<div id="bubbles" aria-hidden="true"></div>
+<main>
+  <header>
+    <span class="icon" id="icon" role="button" tabindex="0" aria-label="Wiggle the Christmas tree">🎄</span>
+    <h1>My Kersfees Wenslys</h1>
+    <p class="sub">Vir idees of om te verify jy het die regte ding gekoop 🐚</p>
+    <p class="hint-line">Tap the presents to unwrap my wishes.</p>
+  </header>
+
+  <section id="gifts"></section>
+
+  <footer>
+    <p>Made with love - looking forward to my presents </p>
+    <button class="btn ghost" id="bubblebtn" type="button">Turn bubbles off 🫧</button>
+  </footer>
+</main>
+
+<script>
+/* ---- EDIT ME: your wishes ----
+   e = emoji, t = gift name, d = funny description,
+   h = hint, u = website link to buy (leave "" to hide the button) */
+var GIFTS = [
+  {e:"😼", t:"Exploding Kittens", d:"A card game for friends who enjoy a bit of chaos at the table.", h:"Hint: there's a two player version and party pack version too", u:"https://www.amazon.co.za/Exploding-Kittens-Card-Game/dp/B010TQY7A8/ref=sr_1_6?crid=NH1KG34G4V58&dib=eyJ2IjoiMSJ9.BqU_WMmya6IJ26TJmrW_K4xaghit3PYnrcYLaQHu9uOnLgEzuz_cUhHUxXkKLsbYXTCJkpATBjXQoz0rHXLLweAu1zi7BtvndLtDTV2ZljmtcfGb6QpD_3-Fm4d5k82LQd49DS4MWhmTQC1PbMPsIiJKYlf9FkgiVoMBs5zYmUExFZXiYer5f5zLX5C71iHnkDZAZHrNv5wPKgepyRderp50PxikURirxEbsRkOV6jOeGR4lJ1pZWd-4No0H-5d1qVbAlfCPPRUn6_hNbTWj3pXPDLboXsP2RjPv1-Kb--I.j45bQiZkkyaCHhsMvkgA2WYWrA0VH_SE9CTrPpxi9jQ&dib_tag=se&keywords=exploding+kittens&qid=1795284765&sprefix=exploding+kitte%2Caps%2C581&sr=8-6"},
+  {e:"🐯", t:"Calvin and Hobbes", d:"Comic book to read in the mornings", h:"Hint: Already have \"Lazy Sunday Book \"", u:"https://exclusivebooks.co.za/products/9780836218053?_pos=8&_sid=017062d6b&_ss=r"},
+  {e:"🧩", t:"Puzzle", d:"Around a 1000 pieces and a pretty picture", h:"Hint: the box should look good on the shelf too.", u:"https://www.poetry.co.za/products/ajournal-table-puzzle/109086729.html?utm_source=google&utm_medium=cpc&utm_campaign={campaignname}&utm_term=&utm_content=&gad_source=1&gad_campaignid=24341399740&gbraid=0AAAAACcms3NLGUUqG_dwRjxEC5ncFpPKC&gclid=CjwKCAiAn4XYBhA-EiwA8176FfA2G9fiRuAR7jp2XABX5ajJtWZDqe4MTiYM62cbaDMo8Q1qjc-v_hoCB9UQAvD_BwE"},
+  {e:"💨", t:"Hair diffuser", d:"Used to dry curly hair", h:"Hint: technically only an attachement, but getting whole hair dryer is easier.", u:"https://www.google.com/search?q=hair+diffuser"},
+  {e:"☕", t:"Coffee Plunger", d:"So I can start buying better coffee", h:"Hint: One that will fit in the dishwaster", u:"https://www.checkers.co.za/product/mila-glass-coffee-plunger-350ml-10333754EA"}
+];
+/* ---- /EDIT ME ---- */
+
+function esc(s){ return s.replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+
+function burst(x, y, chars){
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  for (var i = 0; i < 14; i++){
+    var b = document.createElement("span");
+    b.className = "bit";
+    b.textContent = chars[i % chars.length];
+    b.style.left = x + "px"; b.style.top = y + "px";
+    b.style.setProperty("--x", (Math.random()*240-120) + "px");
+    b.style.setProperty("--y", (Math.random()*-200-20) + "px");
+    document.body.appendChild(b);
+    setTimeout(function(el){ el.remove(); }.bind(null, b), 1100);
+  }
+}
+
+var box = document.getElementById("gifts");
+GIFTS.forEach(function(g, i){
+  var el = document.createElement("article");
+  el.className = "gift";
+  el.innerHTML =
+    '<button class="wrap" type="button" aria-label="Unwrap present ' + (i+1) + '"><span>Tap to unwrap 🎁</span></button>' +
+    '<div class="inside">' +
+      '<div class="top"><div class="big" aria-hidden="true">' + g.e + '</div><div><h2>' + esc(g.t) + '</h2></div></div>' +
+      '<p>' + esc(g.d) + '</p>' +
+      '<p class="hint">' + esc(g.h) + '</p>' +
+      '<div class="actions">' +
+        '<button class="btn ghost hintbtn" type="button">Need a hint?</button>' +
+        '<a class="btn buy" href="' + esc(g.u || "https://www.google.com/search?q=" + encodeURIComponent(g.t)) + '" target="_blank" rel="noopener">See website 🌐</a>' +
+      '</div>' +
+    '</div>';
+  box.appendChild(el);
+
+  el.querySelector(".wrap").addEventListener("click", function(e){
+    el.classList.add("open");
+    burst(e.clientX || innerWidth/2, e.clientY || innerHeight/2, ["✨","🐚","💙"]);
+  });
+  el.querySelector(".hintbtn").addEventListener("click", function(){
+    el.querySelector(".hint").classList.add("show");
+    this.style.display = "none";
+  });
+});
+
+/* wiggle the Christmas tree */
+var icon = document.getElementById("icon");
+function wiggle(){
+  icon.classList.remove("wiggle"); void icon.offsetWidth; icon.classList.add("wiggle");
+  var r = icon.getBoundingClientRect();
+  burst(r.left + r.width/2, r.top + r.height/2, ["⭐","🌊","🐠","☀️"]);
+}
+icon.addEventListener("click", wiggle);
+icon.addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); wiggle(); } });
+
+/* rising bubbles */
+var bub = document.getElementById("bubbles"), bubOn = true, bbtn = document.getElementById("bubblebtn");
+for (var i = 0; i < 18; i++){
+  var s = document.createElement("span");
+  s.className = "b";
+  var size = 10 + Math.random()*26;
+  s.style.width = s.style.height = size + "px";
+  s.style.left = (Math.random()*100) + "vw";
+  s.style.animationDuration = (10 + Math.random()*12) + "s";
+  s.style.animationDelay = (-Math.random()*16) + "s";
+  bub.appendChild(s);
+}
+bbtn.addEventListener("click", function(){
+  bubOn = !bubOn;
+  bub.style.display = bubOn ? "block" : "none";
+  bbtn.textContent = bubOn ? "Turn bubbles off 🫧" : "Bring the bubbles back 🫧";
+});
+</script>
+</body>
+</html>
